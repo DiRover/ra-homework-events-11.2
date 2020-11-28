@@ -8,7 +8,7 @@ export default function IconSwitch(props) {
     }
     return (
         <div className='icon'>
-            <span className="material-icons" onClick={ switchIcon }>{ icon === 'view_module' ? 'view_module' : 'view_list' }</span>
+            <span className="material-icons" onClick={ switchIcon }>{ icon }</span>
         </div>
     )
 };
