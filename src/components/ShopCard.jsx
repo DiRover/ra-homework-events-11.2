@@ -1,15 +1,18 @@
 import React from 'react';
 
-
 export default function ShopCard(props) {
-    const { card } = props;
-    //console.log(card);
+    const { cards } = props;
     return (
-        <div className='item'>
-            <img src={ card.img } className='item_img' alt='sneackers'/>
-            <p className='item_name'>{ card.name }</p>
-            <p className='item_color'>{ card.color }</p>
-            <p className='item_price'>{ card.price }</p>
-        </div>
+        cards.map((card) => {
+            return <div className='card_box' key={performance.now()}>
+                            <p className='card card_name'>{ card.name }</p>
+                            <p className='card card_color'>{ card.color }</p>
+                            <img src={ card.img } className='card_img' alt='sneackers'/>
+                            <div className='card_bottom'>
+                                <p className='card card_price'>${ card.price }</p>
+                                <p className='card card_button'>Add to card</p>
+                            </div>
+                    </div>
+        })
     )
 };
